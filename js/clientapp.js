@@ -11,11 +11,13 @@ var MyTitle = React.createClass({
   }
 });
 
+var MyTitleFactory = React.createFactory(MyTitle);
+
 // composite components
 var MyFirstCompononet = (
   div(null,
-    React.createElement(MyTitle, null),
-    React.createElement(MyTitle, null),
+    MyTitleFactory(null),
+    MyTitleFactory(null),
     React.createElement(MyTitle, null),
     React.createElement(MyTitle, null)
   )
