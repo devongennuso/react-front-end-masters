@@ -5,21 +5,28 @@ var MyTitle = React.createClass({
   render() {
     return (
       div(null,
-        h1(null, 'Check out this component!')
+        h1({style: {color: this.props.color}}, this.props.title)
       )
     )
   }
 });
 
 var MyTitleFactory = React.createFactory(MyTitle);
+var ce = React.createElement;
 
 // composite components
 var MyFirstCompononet = (
   div(null,
-    MyTitleFactory(null),
-    MyTitleFactory(null),
-    React.createElement(MyTitle, null),
-    React.createElement(MyTitle, null)
+    MyTitleFactory({
+      title: "Props are great",
+      color: "rebeccapurple"}),
+    MyTitleFactory({
+      title: "Use props everywhere!",
+      color: "mediumaquamarine"}),
+    MyTitleFactory({
+      title: "Props are the best!",
+      color: "peru"
+    })
   )
 )
 
