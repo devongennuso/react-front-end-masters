@@ -13,7 +13,7 @@ module.exports = {
   stats: {
     colors: true,
     reasons: true,
-    chunks: false //noisy and chunking comes later
+    chunks: false // noisy and chunking comes later
   },
   module: {
     loaders: [
