@@ -13,12 +13,20 @@ module.exports = {
   stats: {
     colors: true,
     reasons: true,
-    chunks: false // noisy and chunking comes later
+    chunks: false
   },
   module: {
+    preLoaders: [{
+      test: /\.js?$/,
+      loader: 'eslint-loader',
+      exclude: /node_modules/
+    }, {
+      test: /\.json$/,
+      loader: 'json-loader'
+    }],
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.js?$/,
         loader: 'babel-loader'
       }
     ]
